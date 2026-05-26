@@ -14,6 +14,10 @@ function App() {
     setCount(--x);
   }
 
+  const handleClickReset = () => {
+    setCount(0);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -22,6 +26,7 @@ function App() {
         <button onClick={handleClickInc}className='buttonInc'>Increment</button>
         <button onClick={handleClickDec} className='buttonDec'>Decrement</button>
         </div>
+        <button onClick={handleClickReset} className='buttonDec'>Reset</button>
       </header>
     </div>
   );
