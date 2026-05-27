@@ -3,15 +3,14 @@ import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [input, setInput] = useState(0);
 
   const handleClickInc = () => {
-    let x = count;
-    setCount(++x)
+    setCount(count + input);
   }
 
   const handleClickDec = () => {
-    let x = count;
-    setCount(--x);
+    setCount(count - input);
   }
 
   const handleClickReset = () => {
@@ -23,10 +22,13 @@ function App() {
       <header className="App-header">
         <h1>{count}</h1>
         <div className='sideBySide'>
-        <button disabled={count === 10} onClick={handleClickInc}className='buttonInc'>Increment</button>
-        <button disabled={count === 0} onClick={handleClickDec} className='buttonDec'>Decrement</button>
+        <input id='inputNum' onChange={(e)=>{setInput(Number(e.target.value))}} placeholder="Enter a Number" max="10" min="1" type="number" />
         </div>
-        <button disabled={count === 0} onClick={handleClickReset} className='buttonDec'>Reset</button>
+        <div className='sideBySide'>
+        <button disabled={count + input > 10} onClick={handleClickInc}className='buttonInc'>Increment</button>
+        <button disabled={count - input < 0}  onClick={handleClickDec} className='buttonDec'>Decrement</button>
+        </div>
+        <button onClick={handleClickReset} className='buttonDec'>Reset</button>
       </header>
     </div>
   );
