@@ -35,3 +35,8 @@ code {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+button:disabled {
+  
+  cursor: not-allowed;
+}

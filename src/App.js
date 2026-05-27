@@ -23,10 +23,10 @@ function App() {
       <header className="App-header">
         <h1>{count}</h1>
         <div className='sideBySide'>
-        <button onClick={handleClickInc}className='buttonInc'>Increment</button>
-        <button onClick={handleClickDec} className='buttonDec'>Decrement</button>
+        <button disabled={count === 10} onClick={handleClickInc}className='buttonInc'>Increment</button>
+        <button disabled={count === 0} onClick={handleClickDec} className='buttonDec'>Decrement</button>
         </div>
-        <button onClick={handleClickReset} className='buttonDec'>Reset</button>
+        <button disabled={count === 0} onClick={handleClickReset} className='buttonDec'>Reset</button>
       </header>
     </div>
   );
